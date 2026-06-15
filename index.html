@@ -1,4 +1,4 @@
-<html data-type="html" data-identifier="56aa5d7b-7c90-41ea-b1e1-dfc8d2ea5d4a" data-title="Coimbatore Trip Resort Comparison" data-version="1" width="1200" height="900"><head>
+<html data-type="html" data-identifier="56aa5d7b-7c90-41ea-b1e1-dfc8d2ea5d4a" data-title="Coimbatore Trip Resort Comparison" data-version="2" width="1200" height="950"><head>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -7,113 +7,103 @@
     color: #1b3a2f;
     padding: 24px;
   }
-  .wrap { max-width: 1140px; margin: 0 auto; }
-  header.page-head {
-    text-align: center;
-    margin-bottom: 18px;
-  }
-  #main-title {
-    font-size: 28px;
-    color: #14532d;
-    letter-spacing: 0.5px;
-  }
-  #subtitle {
-    font-size: 14px;
-    color: #4b6b5a;
-    margin-top: 6px;
-  }
+  .wrap { max-width: 1160px; margin: 0 auto; }
+  header.page-head { text-align: center; margin-bottom: 18px; }
+  #main-title { font-size: 28px; color: #14532d; letter-spacing: 0.5px; }
+  #subtitle { font-size: 14px; color: #4b6b5a; margin-top: 6px; }
   .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
-    margin: 16px 0;
-    background: #ffffffcc;
-    padding: 12px;
-    border-radius: 12px;
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center;
+    margin: 16px 0; background: #ffffffcc; padding: 12px; border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
   .controls #ctrl-label { font-size: 13px; font-weight: 600; color: #2f5d4a; margin-right: 4px; }
   .sort-btn {
-    border: none;
-    background: #2e7d52;
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    border: none; background: #2e7d52; color: #fff; padding: 8px 14px; border-radius: 20px;
+    font-size: 13px; cursor: pointer; transition: background 0.2s, transform 0.1s;
   }
   .sort-btn:hover { background: #1f5c3b; }
   .sort-btn.active { background: #b8860b; }
   .sort-btn:active { transform: scale(0.96); }
   .table-scroll { overflow-x: auto; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    min-width: 980px;
-  }
+  table { width: 100%; border-collapse: collapse; background: #fff; min-width: 1040px; }
   thead th {
-    background: #14532d;
-    color: #fff;
-    padding: 12px 10px;
-    font-size: 13px;
-    text-align: left;
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-    white-space: nowrap;
+    background: #14532d; color: #fff; padding: 12px 10px; font-size: 13px; text-align: left;
+    cursor: pointer; user-select: none; white-space: nowrap;
   }
   thead th.sortable:hover { background: #1f6b3c; }
   thead th .arrow { font-size: 11px; margin-left: 4px; opacity: 0.6; }
   thead th.sorted .arrow { opacity: 1; color: #ffd54f; }
-  tbody td {
-    padding: 11px 10px;
-    font-size: 13px;
-    border-bottom: 1px solid #e3eee7;
-    vertical-align: top;
-  }
+  tbody td { padding: 11px 10px; font-size: 13px; border-bottom: 1px solid #e3eee7; vertical-align: top; }
   tbody tr:nth-child(even) { background: #f5faf7; }
   tbody tr:hover { background: #e8f5e9; }
-  .name { font-weight: 700; color: #14532d; }
-  .loc { font-size: 12px; color: #6b7d74; display: block; margin-top: 2px; }
-  .badge {
-    display: inline-block;
-    padding: 3px 9px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #fff;
+  .name {
+    font-weight: 700; color: #14532d; cursor: pointer; text-decoration: underline;
+    text-decoration-style: dotted; text-underline-offset: 3px;
   }
+  .name:hover { color: #b8860b; }
+  .name .info-dot { font-size: 11px; color:#b8860b; margin-left:4px; }
+  .loc { font-size: 12px; color: #6b7d74; display: block; margin-top: 2px; }
+  .badge { display: inline-block; padding: 3px 9px; border-radius: 12px; font-size: 12px; font-weight: 600; color: #fff; }
   .rating-high { background: #2e7d32; }
   .rating-mid { background: #f9a825; }
   .rating-low { background: #c62828; }
   .price { font-weight: 700; color: #1f5c3b; }
   .price small { display:block; font-weight: 400; color: #889; font-size: 11px; }
-  .weather-pill {
-    display:inline-block; padding: 3px 8px; border-radius: 10px; font-size: 11px; font-weight:600; color:#fff;
-  }
+  .weather-pill { display:inline-block; padding: 3px 8px; border-radius: 10px; font-size: 11px; font-weight:600; color:#fff; }
   .w-good { background:#2e7d32; }
   .w-mod { background:#f9a825; }
   .w-heavy { background:#1565c0; }
+  .temp-cell { font-weight:600; color:#bf6a02; }
+  .temp-cell small { display:block; font-weight:400; color:#889; font-size:11px; }
   .footnote { font-size: 12px; color: #6b7d74; margin-top: 14px; text-align:center; line-height:1.5; }
   #count-info { font-size:12px; color:#4b6b5a; text-align:center; margin-top:8px; }
+
+  /* Modal */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(10,30,20,0.55);
+    z-index: 100; padding: 24px; overflow-y: auto;
+  }
+  .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+  .modal-card {
+    background: #fff; max-width: 640px; width: 100%; border-radius: 16px; margin-top: 30px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3); overflow: hidden; animation: pop 0.18s ease-out;
+  }
+  @keyframes pop { from { transform: scale(0.94); opacity:0; } to { transform: scale(1); opacity:1; } }
+  .modal-head {
+    background: linear-gradient(135deg, #14532d, #2e7d52); color:#fff; padding: 20px 22px; position: relative;
+  }
+  .modal-head h2 { font-size: 22px; margin-bottom: 4px; }
+  .modal-head .m-loc { font-size: 13px; opacity: 0.9; }
+  .modal-head .rec-tag {
+    display:inline-block; margin-top:10px; background:#ffd54f; color:#5d4300; font-size:12px;
+    font-weight:700; padding:4px 12px; border-radius:14px;
+  }
+  .close-x {
+    position: absolute; top: 14px; right: 16px; background: rgba(255,255,255,0.2); color:#fff;
+    border:none; width:32px; height:32px; border-radius:50%; font-size:18px; cursor:pointer; line-height:1;
+  }
+  .close-x:hover { background: rgba(255,255,255,0.35); }
+  .modal-body { padding: 20px 22px; }
+  .detail-row { display:flex; padding:9px 0; border-bottom:1px solid #eef4f0; font-size:14px; }
+  .detail-row:last-child { border-bottom:none; }
+  .detail-label { flex: 0 0 165px; font-weight:700; color:#2f5d4a; }
+  .detail-val { flex:1; color:#33493e; line-height:1.5; }
+  .detail-val .sub { display:block; font-size:12px; color:#7d8f86; margin-top:2px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="page-head">
     <h1 id="main-title">🌴 Coimbatore Getaway — Resort Comparison</h1>
-    <p id="subtitle">Click any column header (or a button) to sort. Click again to reverse the order. Mid-August = monsoon season across the region.</p>
+    <p id="subtitle">Click a column header or button to sort. Click a <strong>resort name</strong> to see full details. Mid-August = monsoon season region-wide.</p>
   </header>
 
   <div class="controls" id="control-bar">
     <span id="ctrl-label">Quick Sort:</span>
     <button class="sort-btn" data-key="distCbe" data-dir="asc">Distance from Coimbatore ↑</button>
     <button class="sort-btn" data-key="distKgm" data-dir="asc">Distance from Kangayam ↑</button>
-    <button class="sort-btn" data-key="weather" data-dir="asc">Best Weather (least rain) ↑</button>
+    <button class="sort-btn" data-key="weather" data-dir="asc">Least Rain ↑</button>
+    <button class="sort-btn" data-key="temp" data-dir="asc">Coolest Temperature ↑</button>
     <button class="sort-btn" data-key="rating" data-dir="desc">Best Reviews ↓</button>
     <button class="sort-btn" data-key="price" data-dir="asc">Lowest Price ↑</button>
   </div>
@@ -126,9 +116,9 @@
           <th data-key="distCbe" class="sortable">Dist. Coimbatore <span class="arrow">↕</span></th>
           <th data-key="distKgm" class="sortable">Dist. Kangayam <span class="arrow">↕</span></th>
           <th data-key="rating" class="sortable">Review <span class="arrow">↕</span></th>
-          <th data-key="weather" class="sortable">Weather (mid-Aug) <span class="arrow">↕</span></th>
+          <th data-key="weather" class="sortable">Rain (mid-Aug) <span class="arrow">↕</span></th>
+          <th data-key="temp" class="sortable">Temp (day/night) <span class="arrow">↕</span></th>
           <th data-key="price" class="sortable">Price / night <span class="arrow">↕</span></th>
-          <th data-key="activities">Top Activities</th>
         </tr>
       </thead>
       <tbody id="table-body"></tbody>
@@ -138,23 +128,101 @@
 
   <p class="footnote" id="footnote-text">
     Distances &amp; times are approximate driving estimates and vary with traffic/route. Prices are indicative per-night rates (₹) and fluctuate by date, room type &amp; platform — always confirm for your exact August dates.
-    Weather sort uses approximate rainy-day count (fewer = drier).
+    "Rain" sort uses approximate rainy-day count; "Temperature" sort uses average daytime high.
   </p>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <button class="close-x" id="close-modal">×</button>
+      <h2 id="m-name"></h2>
+      <div class="m-loc" id="m-loc"></div>
+      <span class="rec-tag" id="m-rec"></span>
+    </div>
+    <div class="modal-body" id="m-body"></div>
+  </div>
 </div>
 
 <script>
   const data = [
-    { name:"Sunvalley Farmstay", loc:"Chittur, Palakkad", distCbe:48, distCbeT:"~50 min", distKgm:100, distKgmT:"~2 hrs", rating:4.5, price:6000, priceNote:"est. (not listed)", rainDays:15, weatherTxt:"Heavy rain ~232mm", wClass:"w-heavy", activities:"Spring-fed pool, jeep safari, farm work, BBQ & bonfire" },
-    { name:"Avana Resort", loc:"Mettupalayam", distCbe:35, distCbeT:"~1 hr", distKgm:80, distKgmT:"~1h 45m", rating:4.3, price:5000, priceNote:"2 adults", rainDays:8, weatherTxt:"Moderate–heavy showers", wClass:"w-mod", activities:"Zip-line, rope course, spa, yoga; next to Black Thunder park" },
-    { name:"Coco Lagoon by Great Mount", loc:"Pollachi, Coimbatore", distCbe:40, distCbeT:"~1 hr", distKgm:78, distKgmT:"~1h 20m", rating:4.3, price:7000, priceNote:"day-out ₹1,999", rainDays:9, weatherTxt:"Monsoon ~132mm", wClass:"w-mod", activities:"Infinity pool, zorbing, archery, boat rides, rifle shooting" },
-    { name:"Ibex River Resort", loc:"Pollachi", distCbe:40, distCbeT:"~1 hr", distKgm:78, distKgmT:"~1h 20m", rating:4.15, price:7000, priceNote:"varies", rainDays:9, weatherTxt:"Monsoon ~132mm", wClass:"w-mod", activities:"River access, pool, archery, rope climb, cycling, foosball" },
-    { name:"The Mango County", loc:"Palakkad", distCbe:55, distCbeT:"~1h 15m", distKgm:105, distKgmT:"~2 hrs", rating:4.0, price:6000, priceNote:"day-out ₹1,250", rainDays:15, weatherTxt:"Heavy rain ~232mm", wClass:"w-heavy", activities:"Lake pedal-boating, pool, cycling, hanging bridge, billiards" },
-    { name:"Maaya Riverside Resort", loc:"Kottathara, Kerala", distCbe:40, distCbeT:"~1 hr", distKgm:90, distKgmT:"~2 hrs", rating:3.7, price:12000, priceNote:"wide range", rainDays:15, weatherTxt:"Heavy rain", wClass:"w-heavy", activities:"Riverside pool/spa, yoga, archery, campfire, river visits" },
-    { name:"Royal Nature Resort", loc:"Pollachi", distCbe:40, distCbeT:"~1 hr", distKgm:78, distKgmT:"~1h 20m", rating:4.0, price:3000, priceNote:"from", rainDays:9, weatherTxt:"Monsoon ~132mm", wClass:"w-mod", activities:"Pool w/ water slides, gym, tennis, cycling, fire camp" },
-    { name:"Poppys Tuskers Hill Resort", loc:"Anaikatti", distCbe:35, distCbeT:"~1–1.5 hr", distKgm:90, distKgmT:"~2 hrs", rating:4.0, price:6599, priceNote:"2 adults", rainDays:10, weatherTxt:"Showers, cooler hills", wClass:"w-mod", activities:"Outdoor pool, Jumbo Activity Centre, kids' play area" },
-    { name:"SR Jungle Resort", loc:"Anaikatti", distCbe:35, distCbeT:"~1–1.5 hr", distKgm:90, distKgmT:"~2 hrs", rating:3.7, price:9000, priceNote:"exec cottage", rainDays:10, weatherTxt:"Showers, cooler hills", wClass:"w-mod", activities:"Spa, jacuzzi, zip-line, rappelling, trekking, cooking class" },
-    { name:"Wild Planet Jungle Resort", loc:"Devala, Nilgiris", distCbe:150, distCbeT:"~3–3.5 hr", distKgm:190, distKgmT:"~4.5 hrs", rating:4.6, price:15000, priceNote:"eco-luxury", rainDays:20, weatherTxt:"Wettest month, cool 18–24°C", wClass:"w-heavy", activities:"Rainforest walks, bird-watching, ATV, kayaking, horse riding" },
-    { name:"Grand Palace Hotel & Spa", loc:"Yercaud", distCbe:175, distCbeT:"~4–4.5 hr", distKgm:150, distKgmT:"~3.5 hrs", rating:4.27, price:9500, priceNote:"avg", rainDays:6, weatherTxt:"Short showers ~108mm", wClass:"w-good", activities:"Infinity pool, full spa, zipline, tree-top course, treks" }
+    { name:"Sunvalley Farmstay", loc:"Chittur, Palakkad (Kerala)", distCbe:48, distCbeT:"~50 min", distKgm:100, distKgmT:"~2 hrs",
+      rating:4.5, ratingNote:"Justdial & Goibibo — praised for cleanliness, spacious rooms, family/group friendly",
+      price:6000, priceNote:"est. (not listed)", priceDetail:"2 farmhouses, 6 AC rooms. Pricing not consistently listed online — confirm on Goibibo. Food at farmstay.",
+      rainDays:15, dayTemp:29, nightTemp:23, weatherTxt:"Heavy rain ~232mm, ~15 rainy days", wClass:"w-heavy",
+      activities:"Spring-fed natural pool, animal feeding & farm work, jeep safari to Nelliyampathy hills, village & mango orchard visits, BBQ & bonfire",
+      rec:"Closest • Authentic farm experience" },
+
+    { name:"Avana Resort", loc:"Mettupalayam (foothills of the Nilgiris)", distCbe:35, distCbeT:"~1 hr", distKgm:80, distKgmT:"~1h 45m",
+      rating:4.3, ratingNote:"4.31/5 MakeMyTrip, 4.4/5 Goibibo — high marks for location & cleanliness; occasional staff/AC issues",
+      price:5000, priceNote:"2 adults", priceDetail:"From ~₹4,500–5,750/night (2 adults). Multi-cuisine restaurant on-site; breakfast praised.",
+      rainDays:8, dayTemp:30, nightTemp:23, weatherTxt:"Moderate–heavy short showers", wClass:"w-mod",
+      activities:"Zip-lining, rope course/Burma bridge, trekking, nature walks, spa, yoga, fishing, billiards, cycling, BBQ/bonfire; next to Black Thunder Theme Park",
+      rec:"Great for adventure + theme park" },
+
+    { name:"Coco Lagoon by Great Mount", loc:"Pollachi, Coimbatore (coconut groves)", distCbe:40, distCbeT:"~1 hr", distKgm:78, distKgmT:"~1h 20m",
+      rating:4.3, ratingNote:"4.3/5 Goibibo — loved for ambiance & activities; food pricing a common gripe",
+      price:7000, priceNote:"day-out ₹1,999", priceDetail:"Rooms from ~₹7,000/night. Day-outing package ~₹1,999 (lunch, snacks, pool, games). Multi-cuisine restaurant.",
+      rainDays:9, dayTemp:30, nightTemp:23, weatherTxt:"Monsoon ~132mm, ~9 rainy days", wClass:"w-mod",
+      activities:"Infinity pool, romantic boat rides, zorbing, bullock cart, archery, rifle shooting, cycling, fishing, pottery, kids' area, billiards",
+      rec:"Best all-round activity hub" },
+
+    { name:"Ibex River Resort", loc:"Pollachi (riverside)", distCbe:40, distCbeT:"~1 hr", distKgm:78, distKgmT:"~1h 20m",
+      rating:4.15, ratingNote:"~4.1–4.2/5 — serene riverside, clean cottages, tasty food; some staff inconsistency",
+      price:7000, priceNote:"varies", priceDetail:"Avg ~₹6,500–9,000/night (varies). Multi-cuisine restaurant; breakfast extra.",
+      rainDays:9, dayTemp:30, nightTemp:23, weatherTxt:"Monsoon ~132mm, ~9 rainy days", wClass:"w-mod",
+      activities:"Pool + kids' pool + river access, archery, table tennis, foosball, rope climbing, cycling, cricket/volleyball, karaoke, bullock-cart rides (on request)",
+      rec:"Peaceful riverside stay" },
+
+    { name:"The Mango County", loc:"Palakkad (Kerala, lakeside)", distCbe:55, distCbeT:"~1h 15m", distKgm:105, distKgmT:"~2 hrs",
+      rating:4.0, ratingNote:"4.0/5 (1,213 reviews) — 'calm escape'; food & pool size could improve",
+      price:6000, priceNote:"day-out ₹1,250", priceDetail:"~₹6,000/night (3 adults+1 child w/ breakfast). Day-out package ₹1,250/person (welcome drink, non-veg lunch, evening tea & snacks).",
+      rainDays:15, dayTemp:29, nightTemp:23, weatherTxt:"Heavy rain ~232mm, ~15 rainy days", wClass:"w-heavy",
+      activities:"Pool, pedal boating in private lake, cycling, trampoline, hanging bridge, badminton, basketball, billiards, snooker, table tennis",
+      rec:"Relaxed lakeside getaway" },
+
+    { name:"Maaya Riverside Resort", loc:"Vellamari, Kottathara (Kerala, near Anaikatti)", distCbe:40, distCbeT:"~1 hr", distKgm:90, distKgmT:"~2 hrs",
+      rating:3.7, ratingNote:"Mixed: 3.7/5 Goibibo, 7.9 'Very Good' Agoda; some complaints on maintenance & overpriced food",
+      price:12000, priceNote:"wide range", priceDetail:"Varies widely — from ~₹10,000 up to ₹23,000+/night per platform. Day-out package available. Some find it overpriced.",
+      rainDays:15, dayTemp:29, nightTemp:23, weatherTxt:"Heavy rain (Siruvani/Bhavani rivers)", wClass:"w-heavy",
+      activities:"Pool (private pools in some villas), spa, yoga, archery, table tennis, carrom, cycling, campfire, river visits",
+      rec:"Scenic but check recent reviews" },
+
+    { name:"Royal Nature Resort", loc:"Pollachi (coconut plantation)", distCbe:40, distCbeT:"~1 hr", distKgm:78, distKgmT:"~1h 20m",
+      rating:4.0, ratingNote:"3.8–4.1/5 — friendly staff, tasty food; some areas need updating",
+      price:3000, priceNote:"from", priceDetail:"From ~₹3,000/night (lowest priced option). Restaurant on-site; some note dinner slow/costly.",
+      rainDays:9, dayTemp:30, nightTemp:23, weatherTxt:"Monsoon ~132mm, ~9 rainy days", wClass:"w-mod",
+      activities:"Pool with water slides, gym, tennis court, indoor/outdoor games, cycling, fire camp, themed dinner nights",
+      rec:"Most budget-friendly" },
+
+    { name:"Poppys Tuskers Hill Resort", loc:"Anaikatti (Western Ghats foothills)", distCbe:35, distCbeT:"~1–1.5 hr", distKgm:90, distKgmT:"~2 hrs",
+      rating:4.0, ratingNote:"4.0/5 MakeMyTrip (177 reviews) — serene, helpful staff; limited food choices noted",
+      price:6599, priceNote:"2 adults", priceDetail:"From ~₹6,599/night (2 adults). Exec rooms ~₹5,100, cottages ~₹5,400. Free breakfast buffet.",
+      rainDays:10, dayTemp:28, nightTemp:20, weatherTxt:"Showers, cooler hills", wClass:"w-mod",
+      activities:"Outdoor pool, Jumbo Activity Centre, indoor/outdoor games, kids' play area",
+      rec:"Cool hill air, family-friendly" },
+
+    { name:"SR Jungle Resort", loc:"Anaikatti (near Coimbatore)", distCbe:35, distCbeT:"~1–1.5 hr", distKgm:90, distKgmT:"~2 hrs",
+      rating:3.7, ratingNote:"Mixed: 8.3 'Excellent' Agoda, 3.7/5 Goibibo (90 reviews); friendly staff, pleasant ambiance",
+      price:9000, priceNote:"exec cottage", priceDetail:"Executive cottage ~₹8,999; family luxury ~₹11,999; family suite ~₹14,999. Day-out packages available.",
+      rainDays:10, dayTemp:28, nightTemp:20, weatherTxt:"Showers, cooler hills", wClass:"w-mod",
+      activities:"Spa, jacuzzi, sauna, multiple pools, zip-lining, rappelling, river crossing, trekking, bird-watching, cycling, fishing, campfire, cooking classes",
+      rec:"Most activities + wellness" },
+
+    { name:"Wild Planet Jungle Resort", loc:"Devala, Nilgiris (Kerala) — rainforest & tea estates", distCbe:150, distCbeT:"~3–3.5 hr", distKgm:190, distKgmT:"~4.5 hrs",
+      rating:4.6, ratingNote:"Excellent: 8.5–9.3/10 (Booking, Agoda, MakeMyTrip) — secluded, great food & nature",
+      price:15000, priceNote:"eco-luxury", priceDetail:"Avg ~₹13,500–16,000/night (luxury eco-resort). Extra bed ₹4,200/adult; kids 6–12 ₹1,250–2,119.",
+      rainDays:20, dayTemp:24, nightTemp:18, weatherTxt:"Wettest month; cool 18–24°C, ~74% rain chance", wClass:"w-heavy",
+      activities:"Guided rainforest/plantation walks, bird-watching (Great Hornbill), trekking, ATV rides, kayaking, horse riding, indoor/outdoor games",
+      rec:"Top-rated • Best for 3-day escape" },
+
+    { name:"Grand Palace Hotel & Spa", loc:"Yercaud (Salem district hill station)", distCbe:175, distCbeT:"~4–4.5 hr", distKgm:150, distKgmT:"~3.5 hrs",
+      rating:4.27, ratingNote:"4.27/5 MakeMyTrip (2,702 reviews), 8.5–8.6 Booking/Agoda — stunning infinity pool & valley views",
+      price:9500, priceNote:"avg", priceDetail:"Avg ~₹9,000–10,000/night. KAYAK rates can be lower. Wide breakfast spread praised.",
+      rainDays:6, dayTemp:30, nightTemp:24, weatherTxt:"Short intense showers ~108mm, ~6 rainy days", wClass:"w-good",
+      activities:"Infinity pool, full-service spa (Ayurvedic massage, sauna), tree-top obstacle course, zipline, air rifle, treks, campfire nights, tennis, cycling, kids' play area",
+      rec:"Best views + spa luxury" }
   ];
 
   const tbody = document.getElementById("table-body");
@@ -166,35 +234,37 @@
 
   function render(){
     tbody.innerHTML = "";
-    data.forEach(function(d){
+    data.forEach(function(d, idx){
       const tr = document.createElement("tr");
       tr.innerHTML =
-        '<td><span class="name">'+d.name+'</span><span class="loc">📍 '+d.loc+'</span></td>'+
+        '<td><span class="name" data-idx="'+idx+'">'+d.name+'<span class="info-dot">ⓘ</span></span><span class="loc">📍 '+d.loc+'</span></td>'+
         '<td>'+d.distCbe+' km<span class="loc">'+d.distCbeT+'</span></td>'+
         '<td>'+d.distKgm+' km<span class="loc">'+d.distKgmT+'</span></td>'+
         '<td><span class="badge '+ratingClass(d.rating)+'">⭐ '+d.rating.toFixed(2)+'</span></td>'+
-        '<td><span class="weather-pill '+d.wClass+'">'+d.rainDays+' rainy days</span><span class="loc">'+d.weatherTxt+'</span></td>'+
-        '<td><span class="price">₹'+d.price.toLocaleString('en-IN')+'<small>'+d.priceNote+'</small></span></td>'+
-        '<td style="font-size:12px;color:#3d564a;">'+d.activities+'</td>';
+        '<td><span class="weather-pill '+d.wClass+'">'+d.rainDays+' rainy days</span></td>'+
+        '<td><span class="temp-cell">'+d.dayTemp+'°C<small>night '+d.nightTemp+'°C</small></span></td>'+
+        '<td><span class="price">₹'+d.price.toLocaleString('en-IN')+'<small>'+d.priceNote+'</small></span></td>';
       tbody.appendChild(tr);
     });
     countInfo.textContent = "Showing "+data.length+" resorts — sorted by "+labelFor(currentKey)+" ("+(currentDir==="asc"?"ascending":"descending")+")";
     updateHeaderArrows();
     updateButtonState();
+    attachNameHandlers();
   }
 
   function labelFor(key){
-    const map = { name:"Name", distCbe:"Distance from Coimbatore", distKgm:"Distance from Kangayam", rating:"Review rating", weather:"Weather", price:"Price" };
+    const map = { name:"Name", distCbe:"Distance from Coimbatore", distKgm:"Distance from Kangayam",
+      rating:"Review rating", weather:"Rainfall", temp:"Temperature", price:"Price" };
     return map[key] || key;
   }
 
   function sortData(key, dir){
-    const sortKey = (key === "weather") ? "rainDays" : key;
+    let sortKey = key;
+    if(key === "weather") sortKey = "rainDays";
+    if(key === "temp") sortKey = "dayTemp";
     data.sort(function(a,b){
       let va = a[sortKey], vb = b[sortKey];
-      if(typeof va === "string"){
-        return dir === "asc" ? va.localeCompare(vb) : vb.localeCompare(va);
-      }
+      if(typeof va === "string"){ return dir === "asc" ? va.localeCompare(vb) : vb.localeCompare(va); }
       return dir === "asc" ? va - vb : vb - va;
     });
     currentKey = key; currentDir = dir;
@@ -209,9 +279,7 @@
       if(th.getAttribute("data-key") === currentKey){
         th.classList.add("sorted");
         arrow.textContent = currentDir === "asc" ? "↑" : "↓";
-      } else {
-        arrow.textContent = "↕";
-      }
+      } else { arrow.textContent = "↕"; }
     });
   }
 
@@ -221,7 +289,41 @@
     });
   }
 
-  // Header click sorting (toggles direction)
+  // ---- Modal logic ----
+  const modal = document.getElementById("modal");
+  function openModal(d){
+    document.getElementById("m-name").textContent = d.name;
+    document.getElementById("m-loc").textContent = "📍 " + d.loc;
+    document.getElementById("m-rec").textContent = "👍 " + d.rec;
+    document.getElementById("m-body").innerHTML =
+      detailRow("Location", d.loc) +
+      detailRow("From Coimbatore", d.distCbe + " km", d.distCbeT + " by car") +
+      detailRow("From Kangayam", d.distKgm + " km", d.distKgmT + " by car") +
+      detailRow("Review / Rating", "⭐ " + d.rating.toFixed(2) + " / 5", d.ratingNote) +
+      detailRow("Weather (mid-Aug)", d.weatherTxt, "Day ~" + d.dayTemp + "°C · Night ~" + d.nightTemp + "°C") +
+      detailRow("Activities", d.activities) +
+      detailRow("Price (stay & food)", "₹" + d.price.toLocaleString('en-IN') + "/night", d.priceDetail);
+    modal.classList.add("open");
+  }
+  function detailRow(label, val, sub){
+    return '<div class="detail-row"><div class="detail-label">'+label+'</div>'+
+           '<div class="detail-val">'+val+(sub ? '<span class="sub">'+sub+'</span>' : '')+'</div></div>';
+  }
+  function closeModal(){ modal.classList.remove("open"); }
+
+  function attachNameHandlers(){
+    document.querySelectorAll(".name").forEach(function(el){
+      el.addEventListener("click", function(){
+        const idx = parseInt(el.getAttribute("data-idx"), 10);
+        openModal(data[idx]);
+      });
+    });
+  }
+  document.getElementById("close-modal").addEventListener("click", closeModal);
+  modal.addEventListener("click", function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
+
+  // ---- Header click sorting ----
   document.querySelectorAll("#resort-table thead th.sortable").forEach(function(th){
     th.addEventListener("click", function(){
       const key = th.getAttribute("data-key");
@@ -232,7 +334,7 @@
     });
   });
 
-  // Button sorting
+  // ---- Button sorting ----
   document.querySelectorAll(".sort-btn").forEach(function(btn){
     btn.addEventListener("click", function(){
       const key = btn.getAttribute("data-key");
