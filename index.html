@@ -1,11 +1,13 @@
-<html data-type="html" data-identifier="56aa5d7b-7c90-41ea-b1e1-dfc8d2ea5d4a" data-title="Coimbatore Trip Resort Comparison" data-version="2" width="1200" height="950"><head>
+<html data-type="html" data-identifier="56aa5d7b-7c90-41ea-b1e1-dfc8d2ea5d4a" data-title="Coimbatore Trip Resort Comparison" data-version="3" width="1200" height="950"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; overflow-x: hidden; }
   body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background: linear-gradient(135deg, #e0f2f1 0%, #f1f8e9 100%);
     color: #1b3a2f;
-    padding: 24px;
+    padding: 24px 16px;
   }
   .wrap { max-width: 1160px; margin: 0 auto; }
   header.page-head { text-align: center; margin-bottom: 18px; }
@@ -16,7 +18,7 @@
     margin: 16px 0; background: #ffffffcc; padding: 12px; border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
-  .controls #ctrl-label { font-size: 13px; font-weight: 600; color: #2f5d4a; margin-right: 4px; }
+  .controls #ctrl-label { font-size: 13px; font-weight: 600; color: #2f5d4a; margin-right: 4px; width: 100%; text-align:center; }
   .sort-btn {
     border: none; background: #2e7d52; color: #fff; padding: 8px 14px; border-radius: 20px;
     font-size: 13px; cursor: pointer; transition: background 0.2s, transform 0.1s;
@@ -24,7 +26,7 @@
   .sort-btn:hover { background: #1f5c3b; }
   .sort-btn.active { background: #b8860b; }
   .sort-btn:active { transform: scale(0.96); }
-  .table-scroll { overflow-x: auto; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+  .table-scroll { overflow-x: auto; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); -webkit-overflow-scrolling: touch; }
   table { width: 100%; border-collapse: collapse; background: #fff; min-width: 1040px; }
   thead th {
     background: #14532d; color: #fff; padding: 12px 10px; font-size: 13px; text-align: left;
@@ -61,18 +63,18 @@
   /* Modal */
   .modal-overlay {
     display: none; position: fixed; inset: 0; background: rgba(10,30,20,0.55);
-    z-index: 100; padding: 24px; overflow-y: auto;
+    z-index: 100; padding: 16px; overflow-y: auto;
   }
   .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
   .modal-card {
-    background: #fff; max-width: 640px; width: 100%; border-radius: 16px; margin-top: 30px;
+    background: #fff; max-width: 640px; width: 100%; border-radius: 16px; margin-top: 20px; margin-bottom: 20px;
     box-shadow: 0 12px 40px rgba(0,0,0,0.3); overflow: hidden; animation: pop 0.18s ease-out;
   }
   @keyframes pop { from { transform: scale(0.94); opacity:0; } to { transform: scale(1); opacity:1; } }
   .modal-head {
     background: linear-gradient(135deg, #14532d, #2e7d52); color:#fff; padding: 20px 22px; position: relative;
   }
-  .modal-head h2 { font-size: 22px; margin-bottom: 4px; }
+  .modal-head h2 { font-size: 22px; margin-bottom: 4px; padding-right: 36px; }
   .modal-head .m-loc { font-size: 13px; opacity: 0.9; }
   .modal-head .rec-tag {
     display:inline-block; margin-top:10px; background:#ffd54f; color:#5d4300; font-size:12px;
@@ -89,21 +91,70 @@
   .detail-label { flex: 0 0 165px; font-weight:700; color:#2f5d4a; }
   .detail-val { flex:1; color:#33493e; line-height:1.5; }
   .detail-val .sub { display:block; font-size:12px; color:#7d8f86; margin-top:2px; }
+
+  /* ============ RESPONSIVE: TABLET ============ */
+  @media (max-width: 860px) {
+    #main-title { font-size: 23px; }
+    #subtitle { font-size: 13px; }
+    .sort-btn { font-size: 12px; padding: 7px 12px; }
+  }
+
+  /* ============ RESPONSIVE: MOBILE (card layout) ============ */
+  @media (max-width: 680px) {
+    body { padding: 16px 10px; }
+    #main-title { font-size: 20px; }
+    #subtitle { font-size: 12px; }
+
+    .controls { padding: 10px 8px; gap: 6px; }
+    .sort-btn { font-size: 12px; padding: 8px 10px; flex: 1 1 auto; min-width: 46%; text-align:center; }
+
+    /* turn table into stacked cards */
+    .table-scroll { overflow: visible; box-shadow: none; }
+    table { min-width: 0; width: 100%; background: transparent; }
+    thead { display: none; } /* hide header row on mobile */
+    tbody tr {
+      display: block; background: #fff !important; border-radius: 14px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 16px; padding: 6px 14px 12px;
+    }
+    tbody td {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding: 9px 0; border-bottom: 1px solid #eef4f0; text-align: right;
+    }
+    tbody td::before {
+      content: attr(data-label); font-weight: 700; color: #2f5d4a; font-size: 12px;
+      text-align: left; margin-right: 12px; flex: 0 0 auto; text-transform: uppercase; letter-spacing: 0.3px;
+    }
+    /* resort name cell as a header band */
+    tbody td.cell-name {
+      display: block; text-align: left; border-bottom: 2px solid #14532d; padding: 6px 0 10px; margin-bottom: 4px;
+    }
+    tbody td.cell-name::before { content: none; }
+    .name { font-size: 16px; }
+    .loc { font-size: 12px; }
+    tbody td .loc { text-align: right; }
+    .temp-cell small, .price small { text-align: right; }
+
+    /* modal full-width feel */
+    .modal-overlay { padding: 10px; }
+    .modal-head h2 { font-size: 19px; }
+    .detail-row { flex-direction: column; }
+    .detail-label { flex: none; margin-bottom: 3px; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="page-head">
     <h1 id="main-title">🌴 Coimbatore Getaway — Resort Comparison</h1>
-    <p id="subtitle">Click a column header or button to sort. Click a <strong>resort name</strong> to see full details. Mid-August = monsoon season region-wide.</p>
+    <p id="subtitle">Tap a column header or button to sort. Tap a <strong>resort name</strong> for full details. Mid-August = monsoon season region-wide.</p>
   </header>
 
   <div class="controls" id="control-bar">
     <span id="ctrl-label">Quick Sort:</span>
-    <button class="sort-btn" data-key="distCbe" data-dir="asc">Distance from Coimbatore ↑</button>
-    <button class="sort-btn" data-key="distKgm" data-dir="asc">Distance from Kangayam ↑</button>
+    <button class="sort-btn" data-key="distCbe" data-dir="asc">Dist. Coimbatore ↑</button>
+    <button class="sort-btn" data-key="distKgm" data-dir="asc">Dist. Kangayam ↑</button>
     <button class="sort-btn" data-key="weather" data-dir="asc">Least Rain ↑</button>
-    <button class="sort-btn" data-key="temp" data-dir="asc">Coolest Temperature ↑</button>
+    <button class="sort-btn" data-key="temp" data-dir="asc">Coolest Temp ↑</button>
     <button class="sort-btn" data-key="rating" data-dir="desc">Best Reviews ↓</button>
     <button class="sort-btn" data-key="price" data-dir="asc">Lowest Price ↑</button>
   </div>
@@ -237,13 +288,13 @@
     data.forEach(function(d, idx){
       const tr = document.createElement("tr");
       tr.innerHTML =
-        '<td><span class="name" data-idx="'+idx+'">'+d.name+'<span class="info-dot">ⓘ</span></span><span class="loc">📍 '+d.loc+'</span></td>'+
-        '<td>'+d.distCbe+' km<span class="loc">'+d.distCbeT+'</span></td>'+
-        '<td>'+d.distKgm+' km<span class="loc">'+d.distKgmT+'</span></td>'+
-        '<td><span class="badge '+ratingClass(d.rating)+'">⭐ '+d.rating.toFixed(2)+'</span></td>'+
-        '<td><span class="weather-pill '+d.wClass+'">'+d.rainDays+' rainy days</span></td>'+
-        '<td><span class="temp-cell">'+d.dayTemp+'°C<small>night '+d.nightTemp+'°C</small></span></td>'+
-        '<td><span class="price">₹'+d.price.toLocaleString('en-IN')+'<small>'+d.priceNote+'</small></span></td>';
+        '<td class="cell-name"><span class="name" data-idx="'+idx+'">'+d.name+'<span class="info-dot">ⓘ</span></span><span class="loc">📍 '+d.loc+'</span></td>'+
+        '<td data-label="From Coimbatore">'+d.distCbe+' km<span class="loc">'+d.distCbeT+'</span></td>'+
+        '<td data-label="From Kangayam">'+d.distKgm+' km<span class="loc">'+d.distKgmT+'</span></td>'+
+        '<td data-label="Review"><span class="badge '+ratingClass(d.rating)+'">⭐ '+d.rating.toFixed(2)+'</span></td>'+
+        '<td data-label="Rain (mid-Aug)"><span class="weather-pill '+d.wClass+'">'+d.rainDays+' rainy days</span></td>'+
+        '<td data-label="Temp (day/night)"><span class="temp-cell">'+d.dayTemp+'°C<small>night '+d.nightTemp+'°C</small></span></td>'+
+        '<td data-label="Price / night"><span class="price">₹'+d.price.toLocaleString('en-IN')+'<small>'+d.priceNote+'</small></span></td>';
       tbody.appendChild(tr);
     });
     countInfo.textContent = "Showing "+data.length+" resorts — sorted by "+labelFor(currentKey)+" ("+(currentDir==="asc"?"ascending":"descending")+")";
