@@ -1,0 +1,250 @@
+<html data-type="html" data-identifier="56aa5d7b-7c90-41ea-b1e1-dfc8d2ea5d4a" data-title="Coimbatore Trip Resort Comparison" data-version="1" width="1200" height="900"><head>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f2f1 0%, #f1f8e9 100%);
+    color: #1b3a2f;
+    padding: 24px;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; }
+  header.page-head {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  #main-title {
+    font-size: 28px;
+    color: #14532d;
+    letter-spacing: 0.5px;
+  }
+  #subtitle {
+    font-size: 14px;
+    color: #4b6b5a;
+    margin-top: 6px;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+    background: #ffffffcc;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .controls #ctrl-label { font-size: 13px; font-weight: 600; color: #2f5d4a; margin-right: 4px; }
+  .sort-btn {
+    border: none;
+    background: #2e7d52;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .sort-btn:hover { background: #1f5c3b; }
+  .sort-btn.active { background: #b8860b; }
+  .sort-btn:active { transform: scale(0.96); }
+  .table-scroll { overflow-x: auto; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    min-width: 980px;
+  }
+  thead th {
+    background: #14532d;
+    color: #fff;
+    padding: 12px 10px;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    white-space: nowrap;
+  }
+  thead th.sortable:hover { background: #1f6b3c; }
+  thead th .arrow { font-size: 11px; margin-left: 4px; opacity: 0.6; }
+  thead th.sorted .arrow { opacity: 1; color: #ffd54f; }
+  tbody td {
+    padding: 11px 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #e3eee7;
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) { background: #f5faf7; }
+  tbody tr:hover { background: #e8f5e9; }
+  .name { font-weight: 700; color: #14532d; }
+  .loc { font-size: 12px; color: #6b7d74; display: block; margin-top: 2px; }
+  .badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .rating-high { background: #2e7d32; }
+  .rating-mid { background: #f9a825; }
+  .rating-low { background: #c62828; }
+  .price { font-weight: 700; color: #1f5c3b; }
+  .price small { display:block; font-weight: 400; color: #889; font-size: 11px; }
+  .weather-pill {
+    display:inline-block; padding: 3px 8px; border-radius: 10px; font-size: 11px; font-weight:600; color:#fff;
+  }
+  .w-good { background:#2e7d32; }
+  .w-mod { background:#f9a825; }
+  .w-heavy { background:#1565c0; }
+  .footnote { font-size: 12px; color: #6b7d74; margin-top: 14px; text-align:center; line-height:1.5; }
+  #count-info { font-size:12px; color:#4b6b5a; text-align:center; margin-top:8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page-head">
+    <h1 id="main-title">🌴 Coimbatore Getaway — Resort Comparison</h1>
+    <p id="subtitle">Click any column header (or a button) to sort. Click again to reverse the order. Mid-August = monsoon season across the region.</p>
+  </header>
+
+  <div class="controls" id="control-bar">
+    <span id="ctrl-label">Quick Sort:</span>
+    <button class="sort-btn" data-key="distCbe" data-dir="asc">Distance from Coimbatore ↑</button>
+    <button class="sort-btn" data-key="distKgm" data-dir="asc">Distance from Kangayam ↑</button>
+    <button class="sort-btn" data-key="weather" data-dir="asc">Best Weather (least rain) ↑</button>
+    <button class="sort-btn" data-key="rating" data-dir="desc">Best Reviews ↓</button>
+    <button class="sort-btn" data-key="price" data-dir="asc">Lowest Price ↑</button>
+  </div>
+
+  <div class="table-scroll">
+    <table id="resort-table">
+      <thead>
+        <tr>
+          <th data-key="name" class="sortable">Resort <span class="arrow">↕</span></th>
+          <th data-key="distCbe" class="sortable">Dist. Coimbatore <span class="arrow">↕</span></th>
+          <th data-key="distKgm" class="sortable">Dist. Kangayam <span class="arrow">↕</span></th>
+          <th data-key="rating" class="sortable">Review <span class="arrow">↕</span></th>
+          <th data-key="weather" class="sortable">Weather (mid-Aug) <span class="arrow">↕</span></th>
+          <th data-key="price" class="sortable">Price / night <span class="arrow">↕</span></th>
+          <th data-key="activities">Top Activities</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+  <p id="count-info"></p>
+
+  <p class="footnote" id="footnote-text">
+    Distances &amp; times are approximate driving estimates and vary with traffic/route. Prices are indicative per-night rates (₹) and fluctuate by date, room type &amp; platform — always confirm for your exact August dates.
+    Weather sort uses approximate rainy-day count (fewer = drier).
+  </p>
+</div>
+
+<script>
+  const data = [
+    { name:"Sunvalley Farmstay", loc:"Chittur, Palakkad", distCbe:48, distCbeT:"~50 min", distKgm:100, distKgmT:"~2 hrs", rating:4.5, price:6000, priceNote:"est. (not listed)", rainDays:15, weatherTxt:"Heavy rain ~232mm", wClass:"w-heavy", activities:"Spring-fed pool, jeep safari, farm work, BBQ & bonfire" },
+    { name:"Avana Resort", loc:"Mettupalayam", distCbe:35, distCbeT:"~1 hr", distKgm:80, distKgmT:"~1h 45m", rating:4.3, price:5000, priceNote:"2 adults", rainDays:8, weatherTxt:"Moderate–heavy showers", wClass:"w-mod", activities:"Zip-line, rope course, spa, yoga; next to Black Thunder park" },
+    { name:"Coco Lagoon by Great Mount", loc:"Pollachi, Coimbatore", distCbe:40, distCbeT:"~1 hr", distKgm:78, distKgmT:"~1h 20m", rating:4.3, price:7000, priceNote:"day-out ₹1,999", rainDays:9, weatherTxt:"Monsoon ~132mm", wClass:"w-mod", activities:"Infinity pool, zorbing, archery, boat rides, rifle shooting" },
+    { name:"Ibex River Resort", loc:"Pollachi", distCbe:40, distCbeT:"~1 hr", distKgm:78, distKgmT:"~1h 20m", rating:4.15, price:7000, priceNote:"varies", rainDays:9, weatherTxt:"Monsoon ~132mm", wClass:"w-mod", activities:"River access, pool, archery, rope climb, cycling, foosball" },
+    { name:"The Mango County", loc:"Palakkad", distCbe:55, distCbeT:"~1h 15m", distKgm:105, distKgmT:"~2 hrs", rating:4.0, price:6000, priceNote:"day-out ₹1,250", rainDays:15, weatherTxt:"Heavy rain ~232mm", wClass:"w-heavy", activities:"Lake pedal-boating, pool, cycling, hanging bridge, billiards" },
+    { name:"Maaya Riverside Resort", loc:"Kottathara, Kerala", distCbe:40, distCbeT:"~1 hr", distKgm:90, distKgmT:"~2 hrs", rating:3.7, price:12000, priceNote:"wide range", rainDays:15, weatherTxt:"Heavy rain", wClass:"w-heavy", activities:"Riverside pool/spa, yoga, archery, campfire, river visits" },
+    { name:"Royal Nature Resort", loc:"Pollachi", distCbe:40, distCbeT:"~1 hr", distKgm:78, distKgmT:"~1h 20m", rating:4.0, price:3000, priceNote:"from", rainDays:9, weatherTxt:"Monsoon ~132mm", wClass:"w-mod", activities:"Pool w/ water slides, gym, tennis, cycling, fire camp" },
+    { name:"Poppys Tuskers Hill Resort", loc:"Anaikatti", distCbe:35, distCbeT:"~1–1.5 hr", distKgm:90, distKgmT:"~2 hrs", rating:4.0, price:6599, priceNote:"2 adults", rainDays:10, weatherTxt:"Showers, cooler hills", wClass:"w-mod", activities:"Outdoor pool, Jumbo Activity Centre, kids' play area" },
+    { name:"SR Jungle Resort", loc:"Anaikatti", distCbe:35, distCbeT:"~1–1.5 hr", distKgm:90, distKgmT:"~2 hrs", rating:3.7, price:9000, priceNote:"exec cottage", rainDays:10, weatherTxt:"Showers, cooler hills", wClass:"w-mod", activities:"Spa, jacuzzi, zip-line, rappelling, trekking, cooking class" },
+    { name:"Wild Planet Jungle Resort", loc:"Devala, Nilgiris", distCbe:150, distCbeT:"~3–3.5 hr", distKgm:190, distKgmT:"~4.5 hrs", rating:4.6, price:15000, priceNote:"eco-luxury", rainDays:20, weatherTxt:"Wettest month, cool 18–24°C", wClass:"w-heavy", activities:"Rainforest walks, bird-watching, ATV, kayaking, horse riding" },
+    { name:"Grand Palace Hotel & Spa", loc:"Yercaud", distCbe:175, distCbeT:"~4–4.5 hr", distKgm:150, distKgmT:"~3.5 hrs", rating:4.27, price:9500, priceNote:"avg", rainDays:6, weatherTxt:"Short showers ~108mm", wClass:"w-good", activities:"Infinity pool, full spa, zipline, tree-top course, treks" }
+  ];
+
+  const tbody = document.getElementById("table-body");
+  const countInfo = document.getElementById("count-info");
+  let currentKey = "distCbe";
+  let currentDir = "asc";
+
+  function ratingClass(r){ if(r >= 4.2) return "rating-high"; if(r >= 3.9) return "rating-mid"; return "rating-low"; }
+
+  function render(){
+    tbody.innerHTML = "";
+    data.forEach(function(d){
+      const tr = document.createElement("tr");
+      tr.innerHTML =
+        '<td><span class="name">'+d.name+'</span><span class="loc">📍 '+d.loc+'</span></td>'+
+        '<td>'+d.distCbe+' km<span class="loc">'+d.distCbeT+'</span></td>'+
+        '<td>'+d.distKgm+' km<span class="loc">'+d.distKgmT+'</span></td>'+
+        '<td><span class="badge '+ratingClass(d.rating)+'">⭐ '+d.rating.toFixed(2)+'</span></td>'+
+        '<td><span class="weather-pill '+d.wClass+'">'+d.rainDays+' rainy days</span><span class="loc">'+d.weatherTxt+'</span></td>'+
+        '<td><span class="price">₹'+d.price.toLocaleString('en-IN')+'<small>'+d.priceNote+'</small></span></td>'+
+        '<td style="font-size:12px;color:#3d564a;">'+d.activities+'</td>';
+      tbody.appendChild(tr);
+    });
+    countInfo.textContent = "Showing "+data.length+" resorts — sorted by "+labelFor(currentKey)+" ("+(currentDir==="asc"?"ascending":"descending")+")";
+    updateHeaderArrows();
+    updateButtonState();
+  }
+
+  function labelFor(key){
+    const map = { name:"Name", distCbe:"Distance from Coimbatore", distKgm:"Distance from Kangayam", rating:"Review rating", weather:"Weather", price:"Price" };
+    return map[key] || key;
+  }
+
+  function sortData(key, dir){
+    const sortKey = (key === "weather") ? "rainDays" : key;
+    data.sort(function(a,b){
+      let va = a[sortKey], vb = b[sortKey];
+      if(typeof va === "string"){
+        return dir === "asc" ? va.localeCompare(vb) : vb.localeCompare(va);
+      }
+      return dir === "asc" ? va - vb : vb - va;
+    });
+    currentKey = key; currentDir = dir;
+    render();
+  }
+
+  function updateHeaderArrows(){
+    document.querySelectorAll("#resort-table thead th").forEach(function(th){
+      const arrow = th.querySelector(".arrow");
+      th.classList.remove("sorted");
+      if(!arrow) return;
+      if(th.getAttribute("data-key") === currentKey){
+        th.classList.add("sorted");
+        arrow.textContent = currentDir === "asc" ? "↑" : "↓";
+      } else {
+        arrow.textContent = "↕";
+      }
+    });
+  }
+
+  function updateButtonState(){
+    document.querySelectorAll(".sort-btn").forEach(function(btn){
+      btn.classList.toggle("active", btn.getAttribute("data-key") === currentKey);
+    });
+  }
+
+  // Header click sorting (toggles direction)
+  document.querySelectorAll("#resort-table thead th.sortable").forEach(function(th){
+    th.addEventListener("click", function(){
+      const key = th.getAttribute("data-key");
+      let dir = "asc";
+      if(currentKey === key){ dir = currentDir === "asc" ? "desc" : "asc"; }
+      else { dir = (key === "rating") ? "desc" : "asc"; }
+      sortData(key, dir);
+    });
+  });
+
+  // Button sorting
+  document.querySelectorAll(".sort-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      const key = btn.getAttribute("data-key");
+      let dir;
+      if(currentKey === key){ dir = currentDir === "asc" ? "desc" : "asc"; }
+      else { dir = btn.getAttribute("data-dir"); }
+      sortData(key, dir);
+    });
+  });
+
+  // Initial render
+  sortData("distCbe", "asc");
+</script>
+
+</body></html>
