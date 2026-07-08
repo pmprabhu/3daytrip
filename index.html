@@ -1,0 +1,789 @@
+<html data-type="html" data-identifier="881c3705-9643-4dfc-bb4b-1087db54d54a" data-title="Nilgiris Foothills Family Trip Planner" data-version="1" width="100%" height="900"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="tab-title">Coimbatore to Coonoor &amp; Black Thunder Family Planner</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 10px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased custom-scrollbar">
+
+    <!-- Top Hero Header Section -->
+    <header class="relative bg-emerald-950 text-white overflow-hidden shadow-xl">
+        <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay" data-src="A breathtaking wide-angle view of lush, green terraced tea plantations in Coonoor with the Nilgiri mountains shrouded in light mist under a soft morning sky, elegant editorial travel style"></div>
+        <div class="relative max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div>
+                <span class="inline-block bg-emerald-500 text-emerald-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2" id="badge-info">Coimbatore Getaway</span>
+                <h1 class="text-3xl sm:text-4xl font-black tracking-tight" id="main-title">Foothills &amp; Peaks Adventure</h1>
+                <p class="mt-2 text-emerald-100 max-w-xl text-sm sm:text-base" id="main-subtitle">3 Days, 2 Nights Family Vacation Plan to Mettupalayam (Black Thunder) &amp; Coonoor for 3 Families.</p>
+            </div>
+            <div class="mt-4 md:mt-0 flex flex-wrap gap-2 text-xs font-semibold bg-emerald-900/60 p-3 rounded-lg border border-emerald-700/50 backdrop-blur-sm">
+                <div class="flex items-center gap-1 text-emerald-300" id="stat-families">
+                    <i class="fa-solid fa-users text-emerald-400"></i>
+                    <span>3 Families (11 Pax)</span>
+                </div>
+                <span class="text-emerald-700">|</span>
+                <div class="flex items-center gap-1 text-emerald-300" id="stat-kids">
+                    <i class="fa-solid fa-child-reaching text-emerald-400"></i>
+                    <span>Kids: Ages 4 to 11</span>
+                </div>
+                <span class="text-emerald-700">|</span>
+                <div class="flex items-center gap-1 text-emerald-300" id="stat-nights">
+                    <i class="fa-solid fa-moon text-emerald-400"></i>
+                    <span>2 Nights / 3 Days</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Interactive Navigation Tabs -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-start space-x-1 sm:space-x-4 py-3 overflow-x-auto custom-scrollbar">
+                <button id="nav-itinerary" class="tab-btn active px-4 py-2 text-sm font-bold rounded-lg text-emerald-700 bg-emerald-50 border border-emerald-200 transition-all flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-calendar-day"></i> Itinerary Schedule
+                </button>
+                <button id="nav-resorts" class="tab-btn px-4 py-2 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-hotel"></i> Stay Options
+                </button>
+                <button id="nav-cost" class="tab-btn px-4 py-2 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-calculator"></i> Cost Splitter
+                </button>
+                <button id="nav-info" class="tab-btn px-4 py-2 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-circle-info"></i> Travel Guide &amp; Maps
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Containers -->
+    <main class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+
+        <!-- TAB 1: ITINERARY SCHEDULE -->
+        <section id="content-itinerary" class="tab-content active space-y-6">
+            
+            <!-- Toggle between Car and Train for Day 2 -->
+            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-3 bg-emerald-500 text-white rounded-lg shadow-md">
+                        <i class="fa-solid fa-route text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-base font-bold text-emerald-950" id="toggle-headline">Select Your Coonoor Transit Style</h2>
+                        <p class="text-xs text-emerald-800" id="toggle-desc">Switch schedules below to see details for a Scenic Car Road-Trip or the Heritage Toy Train.</p>
+                    </div>
+                </div>
+                <div class="flex bg-white p-1.5 rounded-lg border border-emerald-200 shadow-inner w-full sm:w-auto">
+                    <button id="btn-transit-car" class="flex-1 sm:flex-none px-4 py-2 text-xs font-bold rounded-md bg-emerald-600 text-white shadow-sm transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-car"></i> Car Road Trip
+                    </button>
+                    <button id="btn-transit-train" class="flex-1 sm:flex-none px-4 py-2 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-train"></i> Toy Train (NMR)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Visual Timeline Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- DAY 1 CARD -->
+                <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+                    <div class="bg-slate-900 text-white px-5 py-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-amber-500 text-slate-900 font-bold flex items-center justify-center text-sm">1</span>
+                            <h3 class="font-bold text-sm tracking-wide uppercase" id="d1-title">Day 1: Arrival &amp; Dry Rides</h3>
+                        </div>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Friday</span>
+                    </div>
+                    <div class="p-5 flex-1 space-y-4 text-xs sm:text-sm">
+                        <div class="border-l-2 border-emerald-500 pl-4 relative space-y-3">
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">09:30 AM ─ Drive from Coimbatore</span>
+                                <p class="text-slate-600 mt-1" id="d1-time1">Start early for a smooth 1-hour drive (~40 km) to Mettupalayam foothills.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">10:45 AM ─ Resort Check-In</span>
+                                <p class="text-slate-600 mt-1" id="d1-time2">Check in at Avana Resort. Settle down, change, and unpack baggage.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">11:15 AM ─ Black Thunder Amusement Zone</span>
+                                <p class="text-slate-600 mt-1" id="d1-time3">Focus on dry amusement rides, kids play areas, and family attractions.</p>
+                                <ul class="list-disc pl-4 mt-1.5 text-xs text-slate-500 space-y-1">
+                                    <li>Kids (4yo): Carousel, Caterpillar, Toy Train.</li>
+                                    <li>Older Kids (11yo): Dragon Coaster, Dashing Cars.</li>
+                                    <li>Wildlife: Feed birds at Kookyland &amp; visit the Aquarium.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">05:30 PM ─ Resort Rejuvenation</span>
+                                <p class="text-slate-600 mt-1" id="d1-time4">Head to the resort, rest, and let the kids play indoor board games.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">08:00 PM ─ Dinner at Thunder Café</span>
+                                <p class="text-slate-600 mt-1" id="d1-time5">A relaxed dinner at the resort. Try the multi-cuisine or order room service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 2 CARD (CAR & TRAIN SCHEDULES SWITCH DYNAMICALLY) -->
+                <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+                    <div class="bg-emerald-850 bg-emerald-950 text-white px-5 py-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-emerald-500 text-emerald-950 font-bold flex items-center justify-center text-sm">2</span>
+                            <h3 class="font-bold text-sm tracking-wide uppercase" id="d2-title">Day 2: Scenic Coonoor Tour</h3>
+                        </div>
+                        <span class="text-xs bg-emerald-900 text-emerald-200 px-2 py-1 rounded">Saturday</span>
+                    </div>
+
+                    <!-- DAY 2: CAR ROUTE CONTENT -->
+                    <div id="day2-car-content" class="p-5 flex-1 space-y-4 text-xs sm:text-sm">
+                        <div class="border-l-2 border-emerald-500 pl-4 relative space-y-3">
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">08:00 AM ─ Lazy Resort Breakfast</span>
+                                <p class="text-slate-600 mt-1" id="d2c-time1">Enjoy a heavy complimentary buffet breakfast. Prepare kids with sweaters.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">08:45 AM ─ Hit the Mountain Road</span>
+                                <p class="text-slate-600 mt-1" id="d2c-time2">A scenic drive uphill via 14 hairpin bends. Pit-stop at Burliar for fresh forest fruits like mangosteen.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">10:15 AM ─ Sim's Park Botanical Walk</span>
+                                <p class="text-slate-600 mt-1" id="d2c-time3">Exotic trees, safe walkways, and fun pedal-boating for kids in the pond.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">12:00 PM ─ Tea Factory &amp; Chocolate Tasting</span>
+                                <p class="text-slate-600 mt-1" id="d2c-time4">Visit Highfield Tea Factory. See tea-making and taste fresh homemade chocolates.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">01:15 PM ─ Lunch in Bedford Circle</span>
+                                <p class="text-slate-600 mt-1" id="d2c-time5">Dine at Cafe Dieda for kid-friendly pizzas and Italian pastas.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">02:30 PM ─ Dolphin's Nose &amp; Catherine Falls</span>
+                                <p class="text-slate-600 mt-1" id="d2c-time6">Breath-taking views of misty valleys and distant waterfalls.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">05:15 PM ─ Drive back Downhill</span>
+                                <p class="text-slate-600 mt-1" id="d2c-time7">Travel back down the mountain. Reach the resort for a warm shower and dinner.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 2: TRAIN ROUTE CONTENT (HIDDEN BY DEFAULT) -->
+                    <div id="day2-train-content" class="p-5 flex-1 space-y-4 text-xs sm:text-sm hidden">
+                        <div class="border-l-2 border-emerald-500 pl-4 relative space-y-3">
+                            <div class="bg-amber-50 p-2 border border-amber-200 rounded text-xs text-amber-800 flex gap-2 mb-2">
+                                <i class="fa-solid fa-circle-exclamation mt-0.5"></i>
+                                <span id="train-note">Note: Must book tickets exactly 60 days in advance at 08:00 AM on IRCTC!</span>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">06:15 AM ─ Early Wakeup call</span>
+                                <p class="text-slate-600 mt-1" id="d2t-time1">Collect pre-packed light breakfast boxes from the resort kitchen.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">06:45 AM ─ Head to Mettupalayam Station</span>
+                                <p class="text-slate-600 mt-1" id="d2t-time2">A 5-minute drive to the station to catch the Nilgiri Mountain Railway.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">07:10 AM ─ Board the Toy Train (NMR)</span>
+                                <p class="text-slate-600 mt-1" id="d2t-time3">A spectacular, slow-moving historical steam engine ride. Over 3.5 hours of dramatic cliffs and deep forests.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">10:30 AM ─ Reach Coonoor Station</span>
+                                <p class="text-slate-600 mt-1" id="d2t-time4">A pre-booked private Tempo Traveller / cabs will meet you at the platform.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">11:00 AM ─ Continue Coonoor Sightseeing</span>
+                                <p class="text-slate-600 mt-1" id="d2t-time5">Proceed to Sim's Park, Tea Factory, and viewpoints just like the car route.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">05:15 PM ─ Return by road</span>
+                                <p class="text-slate-600 mt-1" id="d2t-time6">The train only goes uphill once. Hire a cab to drive the family comfortably back downhill.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DAY 3 CARD -->
+                <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+                    <div class="bg-slate-900 text-white px-5 py-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-amber-500 text-slate-900 font-bold flex items-center justify-center text-sm">3</span>
+                            <h3 class="font-bold text-sm tracking-wide uppercase" id="d3-title">Day 3: Splash Day &amp; Return</h3>
+                        </div>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Sunday</span>
+                    </div>
+                    <div class="p-5 flex-1 space-y-4 text-xs sm:text-sm">
+                        <div class="border-l-2 border-emerald-500 pl-4 relative space-y-3">
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">08:30 AM ─ Heavy Buffet Breakfast</span>
+                                <p class="text-slate-600 mt-1" id="d3-time1">Eat well at the resort restaurant to fuel up for a heavy water day.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">10:00 AM ─ Check-Out &amp; Store Baggage</span>
+                                <p class="text-slate-600 mt-1" id="d3-time2">Check out of rooms. Safe-keep bags in the resort cloakroom or your car boot.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">10:15 AM ─ Black Thunder Water Splash!</span>
+                                <p class="text-slate-600 mt-1" id="d3-time3">Wear synthetic clothes. Splash all day long in the massive water parks.</p>
+                                <ul class="list-disc pl-4 mt-1.5 text-xs text-slate-500 space-y-1">
+                                    <li>4yo Kid: Safe Kiddies Pool, Mushroom showers.</li>
+                                    <li>11yo Kid: Giant Wave Pool, Volcano slide, Twister.</li>
+                                    <li>Whole Family: Thunder Rain (Dance) &amp; Lazy River float.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">04:00 PM ─ Dry Off &amp; Collect Bags</span>
+                                <p class="text-slate-600 mt-1" id="d3-time4">Use change rooms to dry off and dress. Retrieve luggage from the resort.</p>
+                            </div>
+                            <div>
+                                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider block">04:30 PM ─ Return drive to Coimbatore</span>
+                                <p class="text-slate-600 mt-1" id="d3-time5">A short, 1-hour relaxed drive back home. Unpack, unwind, and rest!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TAB 2: STAY OPTIONS -->
+        <section id="content-resorts" class="tab-content space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- STAY OPTION 1: AVANA -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col md:flex-row">
+                    <div class="md:w-2/5 h-48 md:h-auto relative">
+                        <div class="absolute inset-0 bg-cover bg-center" data-src="An elegant resort villa at the foothills of green mountains, cozy balconies, lush lawns, tropical palm trees, golden sunset lighting, high fashion photography"></div>
+                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-2xs font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow" id="best-value-badge">🏆 Highly Recommended</span>
+                    </div>
+                    <div class="p-5 md:w-3/5 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-base font-bold text-slate-900" id="resort1-title">Avana Resort (Black Thunder Resort)</h3>
+                                <span class="text-emerald-600 font-extrabold text-sm" id="resort1-price">~₹4,500/N</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-0.5" id="resort1-dist"><i class="fa-solid fa-location-dot"></i> Directly adjacent to Black Thunder Theme Park (2 min walk)</p>
+                            
+                            <div class="flex flex-wrap gap-1 mt-3">
+                                <span class="text-3xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600"><i class="fa-solid fa-utensils"></i> Thunder Café</span>
+                                <span class="text-3xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600"><i class="fa-solid fa-gamepad"></i> Games Room</span>
+                                <span class="text-3xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600"><i class="fa-solid fa-baby"></i> Kids Play Area</span>
+                                <span class="text-3xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600"><i class="fa-solid fa-wifi"></i> Free Wi-Fi</span>
+                            </div>
+                            
+                            <p class="text-xs text-slate-600 mt-3" id="resort1-desc">Perfect base camp for theme park focus. Large deluxe rooms and premium suites built within green gardens with beautiful mountain views. Incredible convenience for families with small kids.</p>
+                        </div>
+                        <div class="border-t border-slate-100 pt-3 flex items-center justify-between text-xs font-semibold">
+                            <span class="text-emerald-600" id="resort1-amen"><i class="fa-solid fa-mug-hot"></i> Free Buffet Breakfast</span>
+                            <span class="text-slate-400" id="resort1-pool-no"><i class="fa-solid fa-ban"></i> No Private Pool</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STAY OPTION 2: SATHYA GARDEN -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col md:flex-row">
+                    <div class="md:w-2/5 h-48 md:h-auto relative">
+                        <div class="absolute inset-0 bg-cover bg-center" data-src="A peaceful garden resort with a sparkling blue outdoor swimming pool, comfortable cottages, tall green trees, and relaxing deck chairs, chic resort style"></div>
+                        <span class="absolute top-3 left-3 bg-amber-500 text-slate-900 text-2xs font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow" id="pool-badge">🏊 Complete with Pool</span>
+                    </div>
+                    <div class="p-5 md:w-3/5 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-base font-bold text-slate-900" id="resort2-title">Sathya Garden Resort</h3>
+                                <span class="text-emerald-600 font-extrabold text-sm" id="resort2-price">~₹4,200/N</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-0.5" id="resort2-dist"><i class="fa-solid fa-location-dot"></i> 1.7 km from Black Thunder (5 min drive)</p>
+                            
+                            <div class="flex flex-wrap gap-1 mt-3">
+                                <span class="text-3xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600"><i class="fa-solid fa-swimming-pool"></i> Outdoor Pool</span>
+                                <span class="text-3xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600"><i class="fa-solid fa-seedling"></i> Sprawling Lawns</span>
+                                <span class="text-3xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Carrom &amp; TT</span>
+                                <span class="text-3xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600"><i class="fa-solid fa-bowl-food"></i> Home-style Kitchen</span>
+                            </div>
+                            
+                            <p class="text-xs text-slate-600 mt-3" id="resort2-desc">A serene, green estate perfect if you want to escape commercial settings. Features cottages, large open lawns where children can run, and a beautifully maintained, clean swimming pool.</p>
+                        </div>
+                        <div class="border-t border-slate-100 pt-3 flex items-center justify-between text-xs font-semibold">
+                            <span class="text-emerald-600" id="resort2-amen"><i class="fa-solid fa-mug-hot"></i> Free Breakfast</span>
+                            <span class="text-emerald-600" id="resort2-pool-yes"><i class="fa-solid fa-check-double"></i> Swimming Pool Included</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COMPARISON TIP -->
+            <div class="bg-slate-900 text-slate-300 p-4 rounded-xl border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 bg-amber-500 text-slate-900 rounded-lg">
+                        <i class="fa-solid fa-lightbulb text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider" id="tip-title">Should we choose a resort with a pool?</h4>
+                        <p class="text-2xs text-slate-400 mt-0.5" id="tip-desc">Since you are spending 2 whole days at Black Thunder's massive water parks, kids will get plenty of pool time. Choose Avana for ultimate park proximity, or Sathya if you want quiet evening swims.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: COST SPLITTER & CALCULATOR -->
+        <section id="content-cost" class="tab-content space-y-6">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- CALCULATOR INTERACTIVE PANEL -->
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-5 lg:col-span-1">
+                    <div>
+                        <h2 class="text-base font-bold text-slate-900" id="calc-title">Interactive Cost Splitter</h2>
+                        <p class="text-2xs text-slate-500 mt-0.5" id="calc-subtitle">Adjust parameters to see updated costs for the whole group or individual families.</p>
+                    </div>
+                    
+                    <div class="space-y-4 text-xs">
+                        <!-- Select Active view -->
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1.5" id="lbl-view">View Expenses For:</label>
+                            <select id="calc-view" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                                <option value="group">Whole Group (3 Families - 11 Pax)</option>
+                                <option value="family1">Family 1 &amp; 2 (2 Adults + 2 Kids)</option>
+                                <option value="family3">Family 3 (2 Adults + 1 Kid)</option>
+                            </select>
+                        </div>
+
+                        <!-- Black Thunder Days -->
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1.5" id="lbl-btdays">Black Thunder Theme Park Duration:</label>
+                            <div class="flex bg-slate-100 p-1 rounded-lg border border-slate-200">
+                                <button id="btn-bt-1day" class="flex-1 py-1.5 text-2xs font-semibold rounded text-slate-600 transition-all">1 Day</button>
+                                <button id="btn-bt-2days" class="flex-1 py-1.5 text-2xs font-bold rounded bg-emerald-600 text-white shadow-sm transition-all">2 Days</button>
+                            </div>
+                        </div>
+
+                        <!-- Extra Beds Selector -->
+                        <div class="flex items-center justify-between p-2 bg-slate-50 rounded-lg border border-slate-200">
+                            <div>
+                                <span class="font-bold text-slate-700 block" id="lbl-extrabed">Need Extra Beds?</span>
+                                <span class="text-3xs text-slate-500" id="lbl-extrabed-desc">₹1,200 per bed/night</span>
+                            </div>
+                            <input type="checkbox" id="calc-extrabed" class="w-5 h-5 accent-emerald-600 rounded" checked="">
+                        </div>
+
+                        <!-- Transit Selector -->
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1.5" id="lbl-transit">Coonoor Transit Vehicle:</label>
+                            <select id="calc-transit" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                                <option value="tempo">12-Seater Tempo Traveller (Shared)</option>
+                                <option value="cabs">3 Separate Sedan Cabs</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DYNAMIC RESULTS DISPLAY -->
+                <div class="lg:col-span-2 bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between">
+                    
+                    <!-- Top Summary Card -->
+                    <div class="bg-slate-900 text-white p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-800">
+                        <div>
+                            <span class="text-3xs font-extrabold uppercase tracking-wider text-emerald-400" id="summary-meta">Selected Expense View</span>
+                            <h3 class="text-lg font-black" id="summary-title">Whole Group Budget</h3>
+                            <p class="text-2xs text-slate-400 mt-1" id="summary-desc">Estimated totals for 3 rooms, 2 nights stay, food and local activities.</p>
+                        </div>
+                        <div class="text-left sm:text-right bg-slate-800 p-3 rounded-lg border border-slate-700">
+                            <span class="text-3xs text-slate-400 uppercase tracking-wider block" id="summary-total-lbl">Total Estimated Budget</span>
+                            <span id="calc-total" class="text-2xl sm:text-3xl font-black text-emerald-400">₹88,170</span>
+                        </div>
+                    </div>
+
+                    <!-- Cost Split Columns -->
+                    <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                        <!-- STAY COLUMN -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-2 text-emerald-600 mb-1">
+                                    <i class="fa-solid fa-hotel text-sm"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Stay &amp; Lodging</span>
+                                </div>
+                                <p class="text-2xs text-slate-400 mb-3" id="stay-desc">Avana Resort (2 Nights)</p>
+                                <ul class="text-xs text-slate-600 space-y-1.5" id="stay-items">
+                                    <li class="flex justify-between"><span>Deluxe Rooms:</span> <span class="font-semibold" id="val-stay-base">₹27,000</span></li>
+                                    <li class="flex justify-between"><span>Extra Beds:</span> <span class="font-semibold" id="val-stay-extra">₹7,200</span></li>
+                                    <li class="flex justify-between border-t border-slate-200 pt-1.5 font-bold text-slate-800"><span>Breakfast:</span> <span class="text-emerald-600">FREE</span></li>
+                                </ul>
+                            </div>
+                            <div class="border-t border-slate-200 mt-4 pt-3 flex justify-between items-center text-xs font-bold text-slate-800">
+                                <span>Stay Subtotal</span>
+                                <span id="calc-stay" class="text-sm text-emerald-600">₹34,200</span>
+                            </div>
+                        </div>
+
+                        <!-- ACTIVITIES COLUMN -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-2 text-emerald-600 mb-1">
+                                    <i class="fa-solid fa-mountain-sun text-sm"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Activities</span>
+                                </div>
+                                <p class="text-2xs text-slate-400 mb-3" id="act-desc">Theme Park &amp; Mountain Tour</p>
+                                <ul class="text-xs text-slate-600 space-y-1.5" id="act-items">
+                                    <li class="flex justify-between"><span>Black Thunder:</span> <span class="font-semibold" id="val-act-park">₹21,580</span></li>
+                                    <li class="flex justify-between"><span>Coonoor Vehicle:</span> <span class="font-semibold" id="val-act-trans">₹8,000</span></li>
+                                    <li class="flex justify-between"><span>Sightseeing Fees:</span> <span class="font-semibold" id="val-act-entry">₹1,490</span></li>
+                                </ul>
+                            </div>
+                            <div class="border-t border-slate-200 mt-4 pt-3 flex justify-between items-center text-xs font-bold text-slate-800">
+                                <span>Activities Subtotal</span>
+                                <span id="calc-activities" class="text-sm text-emerald-600">₹31,070</span>
+                            </div>
+                        </div>
+
+                        <!-- FOOD COLUMN -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-2 text-emerald-600 mb-1">
+                                    <i class="fa-solid fa-utensils text-sm"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Food &amp; Dining</span>
+                                </div>
+                                <p class="text-2xs text-slate-400 mb-3" id="food-desc">Lunches, Dinners &amp; Snacks</p>
+                                <ul class="text-xs text-slate-600 space-y-1.5" id="food-items">
+                                    <li class="flex justify-between"><span>3 Lunches:</span> <span class="font-semibold" id="val-food-lunch">₹11,000</span></li>
+                                    <li class="flex justify-between"><span>2 Dinners:</span> <span class="font-semibold" id="val-food-dinner">₹9,900</span></li>
+                                    <li class="flex justify-between"><span>Snacks &amp; Water:</span> <span class="font-semibold" id="val-food-snacks">₹2,000</span></li>
+                                </ul>
+                            </div>
+                            <div class="border-t border-slate-200 mt-4 pt-3 flex justify-between items-center text-xs font-bold text-slate-800">
+                                <span>Food Subtotal</span>
+                                <span id="calc-food" class="text-sm text-emerald-600">₹22,900</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom Warning Message -->
+                    <div class="bg-slate-100 text-slate-500 px-6 py-3 text-3xs border-t border-slate-200" id="calc-footer">
+                        Disclaimer: Estimates are based on average 2026 tariff lists. Actual taxes, seasonal hikes, or park fee modifications may apply. All breakfast estimates include the resort's free morning buffet.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TAB 4: TRAVEL INFOS & MAPS -->
+        <section id="content-info" class="tab-content space-y-6">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- ROAD TRIP MAP & STOPS -->
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4">
+                    <div class="flex items-center gap-2 text-emerald-700">
+                        <i class="fa-solid fa-map-location-dot text-lg"></i>
+                        <h3 class="font-bold text-xs uppercase tracking-wider" id="card-map-title">Route &amp; Map Detail</h3>
+                    </div>
+                    
+                    <div class="relative bg-emerald-950 h-40 rounded-lg overflow-hidden flex items-center justify-center border border-emerald-800 shadow-inner">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay" data-src="A simplified graphic style vector map with paths from Coimbatore to Mettupalayam then curving uphill to Coonoor town, with small mountain icon, creative graphic"></div>
+                        <div class="relative text-center p-4">
+                            <span class="text-white font-black text-sm tracking-wide block" id="map-lbl">CBE ➔ MTP ➔ Coonoor</span>
+                            <span class="text-emerald-300 text-3xs font-semibold block mt-1" id="map-sub">35 km highway + 30 km mountain road</span>
+                        </div>
+                    </div>
+
+                    <div class="text-xs space-y-3">
+                        <div class="flex items-start gap-2.5">
+                            <span class="w-4 h-4 rounded-full bg-slate-200 font-bold text-slate-700 flex items-center justify-center text-3xs mt-0.5">1</span>
+                            <div>
+                                <span class="font-bold block text-slate-800">Coimbatore to Mettupalayam</span>
+                                <p class="text-2xs text-slate-500" id="map-step1">40 km | 1 hr. Flat four-lane highway, very straightforward.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <span class="w-4 h-4 rounded-full bg-slate-200 font-bold text-slate-700 flex items-center justify-center text-3xs mt-0.5">2</span>
+                            <div>
+                                <span class="font-bold block text-slate-800">Mettupalayam to Coonoor Ghats</span>
+                                <p class="text-2xs text-slate-500" id="map-step2">35 km | 1.2 hrs. Hairpin bends (14 turns). Steep climb but extremely scenic.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ADVICE FOR ROAD TRIP WITH KIDS -->
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4">
+                    <div class="flex items-center gap-2 text-emerald-700">
+                        <i class="fa-solid fa-kit-medical text-lg"></i>
+                        <h3 class="font-bold text-xs uppercase tracking-wider" id="card-kids-title">Kid Safety &amp; Comfort</h3>
+                    </div>
+                    
+                    <ul class="text-xs text-slate-600 space-y-3">
+                        <li class="flex gap-2.5">
+                            <i class="fa-solid fa-pills text-emerald-500 mt-1"></i>
+                            <div>
+                                <span class="font-bold block text-slate-800">Prevent Motion Sickness</span>
+                                <p class="text-2xs text-slate-500" id="adv-1">Ghat roads can cause dizziness in children. Keep windows slightly down for fresh air, drive slowly around the 14 bends, and avoid heavy oily foods before the climb.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-2.5">
+                            <i class="fa-solid fa-shirt text-emerald-500 mt-1"></i>
+                            <div>
+                                <span class="font-bold block text-slate-800">Swimwear Regulations</span>
+                                <p class="text-2xs text-slate-500" id="adv-2">Black Thunder strictly mandates synthetic or nylon clothing for water rides. Pack them in advance for the whole family to avoid paying high rental rates at the venue.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-2.5">
+                            <i class="fa-solid fa-snowflake text-emerald-500 mt-1"></i>
+                            <div>
+                                <span class="font-bold block text-slate-800">Weather Swings</span>
+                                <p class="text-2xs text-slate-500" id="adv-3">While Mettupalayam foothills are warm, Coonoor peaks get quite chilly and misty. Dress the children in layers (t-shirt + sweater) that can be easily removed.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- PACKING CHECKLIST -->
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4">
+                    <div class="flex items-center gap-2 text-emerald-700">
+                        <i class="fa-solid fa-clipboard-list text-lg"></i>
+                        <h3 class="font-bold text-xs uppercase tracking-wider" id="card-pack-title">Quick Packing List</h3>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 text-2xs text-slate-600">
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-slate-800 border-b border-slate-100 pb-1" id="pack-h1">👕 Wearables</h4>
+                            <label class="flex items-center gap-1.5"><input type="checkbox" class="accent-emerald-600" checked=""> Synthetic swimwear</label>
+                            <label class="flex items-center gap-1.5"><input type="checkbox" class="accent-emerald-600"> Light sweaters</label>
+                            <label class="flex items-center gap-1.5"><input type="checkbox" class="accent-emerald-600"> Comfortable sneakers</label>
+                            <label class="flex items-center gap-1.5"><input type="checkbox" class="accent-emerald-600"> Slip-resistant slippers</label>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-slate-800 border-b border-slate-100 pb-1" id="pack-h2">🎒 Essentials</h4>
+                            <label class="flex items-center gap-1.5"><input type="checkbox" class="accent-emerald-600" checked=""> Sunscreen lotion</label>
+                            <label class="flex items-center gap-1.5"><input type="checkbox" class="accent-emerald-600"> Motion sickness pills</label>
+                            <label class="flex items-center gap-1.5"><input type="checkbox" class="accent-emerald-600" checked=""> Waterproof pouch (phone)</label>
+                            <label class="flex items-center gap-1.5"><input type="checkbox" class="accent-emerald-600"> ID proofs (for checks)</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-center text-xs">
+        <p class="mb-2" id="footer-text">Made for WPP Family Trip Planner — Mettupalayam &amp; Coonoor Gateway 2026.</p>
+        <p class="text-slate-600" id="footer-credits">Images generated on modern photography models. Tariffs based on standard Indian Rupees.</p>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Tab switching logic
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active styling from all buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active', 'text-emerald-700', 'bg-emerald-50', 'border-emerald-200');
+                    btn.classList.add('text-slate-600', 'hover:text-slate-900', 'hover:bg-slate-100');
+                });
+                
+                // Add active styling to clicked button
+                this.classList.add('active', 'text-emerald-700', 'bg-emerald-50', 'border-emerald-200');
+                this.classList.remove('text-slate-600', 'hover:text-slate-900', 'hover:bg-slate-100');
+
+                // Hide all contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+
+                // Show corresponding content
+                const tabId = this.id.replace('nav-', 'content-');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Day 2 Transit switcher logic
+        const btnCar = document.getElementById('btn-transit-car');
+        const btnTrain = document.getElementById('btn-transit-train');
+        const carContent = document.getElementById('day2-car-content');
+        const trainContent = document.getElementById('day2-train-content');
+
+        btnCar.addEventListener('click', () => {
+            // Button style active
+            btnCar.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-bold rounded-md bg-emerald-600 text-white shadow-sm transition-all flex items-center justify-center gap-2";
+            btnTrain.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900 transition-all flex items-center justify-center gap-2";
+            // Content toggle
+            carContent.classList.remove('hidden');
+            trainContent.classList.add('hidden');
+        });
+
+        btnTrain.addEventListener('click', () => {
+            // Button style active
+            btnTrain.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-bold rounded-md bg-emerald-600 text-white shadow-sm transition-all flex items-center justify-center gap-2";
+            btnCar.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900 transition-all flex items-center justify-center gap-2";
+            // Content toggle
+            trainContent.classList.remove('hidden');
+            carContent.classList.add('hidden');
+        });
+
+        // DYNAMIC COST CALCULATOR LOGIC
+        const viewSelector = document.getElementById('calc-view');
+        const bt1day = document.getElementById('btn-bt-1day');
+        const bt2days = document.getElementById('btn-bt-2days');
+        const extrabedCheck = document.getElementById('calc-extrabed');
+        const transitSelector = document.getElementById('calc-transit');
+
+        // Dynamic output containers
+        const uiTotal = document.getElementById('calc-total');
+        const uiStay = document.getElementById('calc-stay');
+        const uiActivities = document.getElementById('calc-activities');
+        const uiFood = document.getElementById('calc-food');
+        
+        // Inner item outputs
+        const uiStayBase = document.getElementById('val-stay-base');
+        const uiStayExtra = document.getElementById('val-stay-extra');
+        const uiActPark = document.getElementById('val-act-park');
+        const uiActTrans = document.getElementById('val-act-trans');
+        const uiActEntry = document.getElementById('val-act-entry');
+        const uiFoodLunch = document.getElementById('val-food-lunch');
+        const uiFoodDinner = document.getElementById('val-food-dinner');
+        const uiFoodSnacks = document.getElementById('val-food-snacks');
+        const uiSummaryTitle = document.getElementById('summary-title');
+        const uiSummaryDesc = document.getElementById('summary-desc');
+
+        let is2DaysBT = true;
+
+        bt1day.addEventListener('click', () => {
+            is2DaysBT = false;
+            bt1day.className = "flex-1 py-1.5 text-2xs font-bold rounded bg-emerald-600 text-white shadow-sm transition-all";
+            bt2days.className = "flex-1 py-1.5 text-2xs font-semibold rounded text-slate-600 transition-all";
+            calculateCosts();
+        });
+
+        bt2days.addEventListener('click', () => {
+            is2DaysBT = true;
+            bt2days.className = "flex-1 py-1.5 text-2xs font-bold rounded bg-emerald-600 text-white shadow-sm transition-all";
+            bt1day.className = "flex-1 py-1.5 text-2xs font-semibold rounded text-slate-600 transition-all";
+            calculateCosts();
+        });
+
+        extrabedCheck.addEventListener('change', calculateCosts);
+        transitSelector.addEventListener('change', calculateCosts);
+        viewSelector.addEventListener('change', calculateCosts);
+
+        function calculateCosts() {
+            const activeView = viewSelector.value;
+            const extraBedsWanted = extrabedCheck.checked;
+            const transitMode = transitSelector.value;
+
+            // Definition of costs
+            let adults = 6;
+            let kids = 5;
+            let rooms = 3;
+            let extraBeds = 3;
+
+            if (activeView === 'family1') {
+                adults = 2;
+                kids = 2;
+                rooms = 1;
+                extraBeds = 1;
+                uiSummaryTitle.innerText = "Family 1 & 2 Cost Split";
+                uiSummaryDesc.innerText = "Estimated shares for 1 Room, 2 Adults, 2 Kids (Ages 4 & 11).";
+            } else if (activeView === 'family3') {
+                adults = 2;
+                kids = 1;
+                rooms = 1;
+                extraBeds = 1;
+                uiSummaryTitle.innerText = "Family 3 Cost Split";
+                uiSummaryDesc.innerText = "Estimated shares for 1 Room, 2 Adults, 1 Kid.";
+            } else {
+                uiSummaryTitle.innerText = "Whole Group Budget";
+                uiSummaryDesc.innerText = "Estimated totals for 3 rooms, 2 nights stay, food and local activities.";
+            }
+
+            // Calculations
+            // 1. STAY
+            const stayBaseCost = rooms * 4500 * 2;
+            const stayExtraCost = extraBedsWanted ? (extraBeds * 1200 * 2) : 0;
+            const stayTotal = stayBaseCost + stayExtraCost;
+
+            // 2. ACTIVITIES
+            const themeParkDaysMultiplier = is2DaysBT ? 2 : 1;
+            const themeParkCost = ((adults * 1090) + (kids * 850)) * themeParkDaysMultiplier;
+            
+            let transitCost = 0;
+            if (activeView === 'group') {
+                transitCost = transitMode === 'tempo' ? 8000 : 10500; // 3 cabs are ~10500 total
+            } else {
+                // Individual shares
+                transitCost = transitMode === 'tempo' ? Math.round(8000 / 3) : 3500;
+            }
+
+            const totalEntries = ((adults * 40) + (kids * 20)) + (adults + kids) * 50 + (activeView === 'group' ? 600 : 200); // sims park + tea + toll/park
+            const activitiesTotal = themeParkCost + transitCost + totalEntries;
+
+            // 3. FOOD
+            const lunchPerHead = 300 * 2 + 400; // 2 theme park lunches + 1 Coonoor cafe lunch
+            const totalLunch = (adults + kids) * lunchPerHead;
+            const totalDinner = (adults + kids) * 450 * 2; // 2 dinners at resort
+            const totalSnacks = activeView === 'group' ? 2000 : Math.round(2000 / 3);
+            const foodTotal = totalLunch + totalDinner + totalSnacks;
+
+            const finalGrandTotal = stayTotal + activitiesTotal + foodTotal;
+
+            // Update UI elements
+            uiStayBase.innerText = "₹" + stayBaseCost.toLocaleString('en-IN');
+            uiStayExtra.innerText = "₹" + stayExtraCost.toLocaleString('en-IN');
+            uiStay.innerText = "₹" + stayTotal.toLocaleString('en-IN');
+
+            uiActPark.innerText = "₹" + themeParkCost.toLocaleString('en-IN');
+            uiActTrans.innerText = "₹" + transitCost.toLocaleString('en-IN');
+            uiActEntry.innerText = "₹" + totalEntries.toLocaleString('en-IN');
+            uiActivities.innerText = "₹" + activitiesTotal.toLocaleString('en-IN');
+
+            uiFoodLunch.innerText = "₹" + totalLunch.toLocaleString('en-IN');
+            uiFoodDinner.innerText = "₹" + totalDinner.toLocaleString('en-IN');
+            uiFoodSnacks.innerText = "₹" + totalSnacks.toLocaleString('en-IN');
+            uiFood.innerText = "₹" + foodTotal.toLocaleString('en-IN');
+
+            uiTotal.innerText = "₹" + finalGrandTotal.toLocaleString('en-IN');
+        }
+
+        // Initialize first calculation
+        calculateCosts();
+
+        // Lazy-loading backgrounds dynamically to follow instructions safely
+        document.querySelectorAll('[data-src]').forEach(el => {
+            const promptValue = el.getAttribute('data-src');
+            // Mock background gradients as beautiful placeholders
+            el.style.backgroundColor = '#064e3b';
+            el.style.backgroundImage = 'linear-gradient(to bottom right, #022c22, #064e3b)';
+        });
+    </script>
+
+</body></html>
